@@ -37,6 +37,28 @@ pre{
 }
 </style>
 
-<div>
-&#127821; : &#127817; : &#127824; : &#127824; : &#127817; : &#127819;
-You win:  A thousand dollars
+print("Content-type: text/html \n")
+
+import magicwand
+import random 
+
+item1 = random.randint(0,3)
+item2 = random.randint(0,3)
+item3 = random.randint(0,3)
+item4 = random.randint(0,3)
+item5 = random.randint(0,3)
+item6 = random.randint(0,3)
+
+things = ["&#127821;","&#127819;","&#127824;","&#127817;"]
+
+print(things[item1], ":", things[item2], ":", things[item3], ":", things[item4], ":", things[item5], ":", things[item6])
+
+def slot_machine(item1,item2,item3):
+    if item1 == item2 and item2 == item3 and item3 == item4 and item4 == item5 and item5 == item6:
+        return "A dollar"
+    elif item1 == item2 or item2 == item3 or item3 == item4 or item4 == item5 or item5 == item6:
+        return "A thousand dollars"
+    else: 
+        return "Nothing"
+reward = slot_machine(item1,item2,item3)
+print("You win: ", reward) 
