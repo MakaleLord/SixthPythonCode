@@ -37,40 +37,53 @@ pre{
 }
 </style>
 
-<div>
-Can you complete the following words:
-
-Ind__d
-Hint eeddnI
-
-_u_tl_
-Hint tuelSb
-
-__o_u_e
-Hint luseorC
-
-____
-Hint oupS
-
-_a__n
-Hint neaRm
+#!/usr/bin/python3
+print("Content-type: text/html \n")
+import magicwand, random, sys
 
 
+words_tuple = ("Indeed", 
+               "Subtle", 
+               "Closure", 
+               "Soup", 
+               "Ramen")
 
+print("Can you complete the following words:")
+print()
 
+for word in words_tuple:
+    jumbled_word = ""
+    max_index = len(word) - 1
+    rand_index = random.randint(0,max_index)
+    rand_index2 = random.randint(0, max_index)
+    rand_index3 = random.randint(0, max_index)
+    rand_index4 = random.randint(0, max_index)
+    for char in word:
+        if char == word[rand_index] or char == word[rand_index2] or char == word[rand_index3] or char == word[rand_index4]:
+            jumbled_word = jumbled_word + "_"
+        else:
+            jumbled_word = jumbled_word + char 
+    print(jumbled_word)
+    w_list = list(word)    
+    random.shuffle(w_list) 
+    scrambled_word = "".join(w_list)
+    print("Hint", scrambled_word)
+    print()
+    
+print()    
+print()    
+print()    
+print()    
+print()    
+print()    
+print()    
+print()   
+print()    
+print()    
+print()    
+print()    
+print()    
+print()    
 
-
-
-
-
-
-
-
-
-
-
-Indeed
-Subtle
-Closure
-Soup
-Ramen
+for word in words_tuple:
+    print(word)
