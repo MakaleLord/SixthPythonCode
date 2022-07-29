@@ -36,7 +36,7 @@ pre{
   font-family: inherit;
 }
 </style>
-
+#!/usr/bin/python3
 print("Content-type: text/html \n")
 
 import magicwand
